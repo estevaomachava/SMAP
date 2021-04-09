@@ -1,0 +1,54 @@
+<!--Editing student-->
+{{#each worker}}
+
+<div class="main_update_workers">
+  <form method="post" action="/updateWorker">
+
+    <div class="form_control">
+        <label for="name">Nome</label><br>
+        <input type="text" name="name" id="name" value="{{name}}">
+      <input type="hidden" name="id" value="{{id}}">
+      </div>
+
+      <div class="form_control">
+        <label for="area">Área de Atuação</label><br>
+        <select name="area" id="area">
+          <option value="">------------------------------------------Seleccione a área de atuação------------------------------------------</option>
+          <option value="Pedagógica">Pedagógica</option>
+          <option value="Administrativa">Administrativa</option>
+          <option value="Secretaria">Secretaria</option>
+          <option value="Ulteriores">Ulteriores</option>
+        </select>
+      </div>
+
+      <div class="form_control">
+        <label for="shift">Turno</label><br>
+        <select name="shift" id="shift">
+          <option value="">------------------------------------------Seleccione o turno------------------------------------------</option>
+          <option value="Manhã">Manhã</option>
+          <option value="Tarde">Tarde</option>
+          <option value="Noite">Noite</option>
+          <option value="Todo dia">Todo dia</option>
+        </select>
+      </div>
+
+      <div class="form_control">
+        <label for="responsability">Responsabilidade</label><br>
+        <input type="text" name="responsability" id="responsability" value="{{responsability}}">
+      </div>
+
+      <div class="form_control">
+        <label for="observations">Observações</label><br>
+        <textarea name="observations" id="observations" cols="30" rows="10">{{observations}}</textarea>
+      </div>
+
+    <div class="button_worker">
+      <button type="submit" class="btn_success">Atualizar</button>
+      <a href="/workers" class="btn_primary">Voltar</a>
+    </div>
+
+  </form>
+</div>
+
+{{/each}}
+<!--End of Editing student-->

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  {{#if login}}
+  <title>SMAP | Login</title>
+  {{/if}}
+  {{#if home}}
+  <title>SMAP | Home</title>
+  {{/if}}
+  {{#if students}}
+  <title>SMAP | Students</title>
+  {{/if}}
+  {{#if heads}}
+  <title>SMAP | Encarregados</title>
+  {{/if}}
+  {{#if events}}
+  <title>SMAP | Eventos</title>
+  {{/if}}
+  {{#if workers}}
+  <title>SMAP | Pessoal</title>
+  {{/if}}
+  {{#if finances}}
+  <title>SMAP | Finanças</title>
+  {{/if}}
+  {{#if documents}}
+  <title>SMAP | Documentos</title>
+  {{/if}}
+  {{#if statistics}}
+  <title>SMAP | Estatísticas</title>
+  {{/if}}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/images/icon.png" type="image/png">
+  <link rel="stylesheet" href="/css/global.css">
+  {{#if login}}
+  <link rel="stylesheet" href="/css/style.css">
+  {{else}}
+  <link rel="stylesheet" href="/css/index.css">
+  {{/if}}
+  <link rel="stylesheet" href="/css/font-awesome-4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+  {{#if all}}
+  {{>navbar}}
+  <!--CONTAINER-->
+  <div class="container d_grid">
+    {{>menu}}
+    {{/if}}
+    {{{body}}}
+    {{#if all}}
+  </div>
+  {{/if}}
+</body>
+<script src="/js/jquery-3.5.0.js"></script>
+<script src="/js/main.js"></script>
+{{#if login}}
+<script src="/js/script.js"></script>
+{{/if}}
+{{#if home}}
+<script src="/js/utils.js"></script>
+{{/if}}
+{{#if students}}
+<script src="/js/utils.js"></script>
+{{/if}}
+{{#if heads}}
+<script src="/js/charge.js"></script>
+{{/if}}
+{{#if events}}
+<script src="/js/events.js"></script>
+{{/if}}
+{{#if workers}}
+<script src="/js/workers.js"></script>
+{{/if}}
+{{#if finances}}
+<script src="/js/finances.js"></script>
+{{/if}}
+{{#if documents}}
+<script src="/js/docs.js"></script>
+{{/if}}
+{{#if statistics}}
+<script src="/js/stats.js"></script>
+{{/if}}
+
+</html>

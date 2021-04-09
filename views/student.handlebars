@@ -1,0 +1,239 @@
+<!--MAIN-->
+<div class="main">
+  {{#if err}}
+  <div class="warning_content" id="warning_message">{{err}}</div>
+  {{/if}}
+  {{#if success}}
+  <div class="success_content" id="success_content">{{success}}</div>
+  {{/if}}
+
+
+  <!--MAIN STUDENT CLASS-->
+  <div class="main_student" id="main_student">
+    <div class="card_student" id="add_student">
+      <h1><i class="fa fa-plus"></i></h1>
+    </div>
+    <div class="view_student_list card_student" id="view_student_list">
+      <h1><i class="fa fa-th-list"></i></h1>
+    </div>
+    <div class="students_charts card_student" id="students_charts">
+      <h1><i class="fa fa-line-chart"></i></h1>
+    </div>
+  </div>
+  <!--END MAIN STUDENT CLASS-->
+
+  <!--MAIN ADD STUDENT CLASS-->
+  <div class="main_add_student d_none" id="main_add_student">
+    <form method="post" action="/students" id="form_student" enctype="multipart/form-data">
+
+      <div class="form_control">
+        <label for="name">Nome Completo</label><br>
+        <input type="text" name="name" id="name">
+      </div>
+
+      <div class="form_control">
+        <label for="file">Fotografia</label><br>
+        <input type="file" name="file" id="file" accept="image/*">
+      </div>
+
+      <div class="form_control">
+        <label for="father">Filho de</label><br>
+        <input type="text" name="father" id="father">
+      </div>
+
+      <div class="form_control">
+        <label for="mother">E de</label><br>
+        <input type="text" name="mother" id="mother">
+      </div>
+
+      <div class="form_control">
+        <label for="day">Data de Nascimento</label><br>
+        <div class="d_flex event_date">
+          <input type="number" name="day" min="1" max="31" maxlength="2">
+          <select name="month" id="month">
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+          <input type="number" name="year" maxlength="4">
+        </div>
+      </div>
+
+      <div class="form_control">
+        <label for="bi">Bilhete nº</label><br>
+        <span id="bi_msg"></span>
+        <input type="text" name="bi" id="bi">
+      </div>
+
+      <div class="form_control">
+        <label for="city">Cidade</label><br>
+        <input type="text" name="city" id="city">
+      </div>
+
+      <div class="form_control">
+        <label for="neighbor">Bairro</label><br>
+        <input type="text" name="neighbor" id="neighbor">
+      </div>
+
+      <div class="form_control">
+        <label for="background">Proveniência</label><br>
+        <select name="background" id="background">
+          <option value="">------------------------------------------Seleccione a proveniência
+            escolar------------------------------------------</option>
+          <option value="Nenhuma">Nenhuma</option>
+          <option value="Transferido">Transferido</option>
+        </select>
+      </div>
+
+      <div class="form_control">
+        <label for="gender">Gênero</label><br>
+        <select name="gender" id="gender">
+          <option value="">------------------------------------------Seleccione o
+            gênero------------------------------------------</option>
+          <option value="M">Masculino</option>
+          <option value="F">Femenino</option>
+        </select>
+      </div>
+
+      <div class="form_control">
+        <label for="civil">Estado Civil</label><br>
+        <select name="civil" id="civil">
+          <option value="">------------------------------------------Seleccione o estado
+            civil------------------------------------------</option>
+          <option value="Solteiro">Solteiro</option>
+          <option value="Casado">Casado</option>
+        </select>
+      </div>
+
+      <div class="form_control">
+        <select name="classe" id="classe">
+          <option value="">------------------------------------------Seleccione a
+            classe------------------------------------------</option>
+          <option value="Iniciação">Iniciação</option>
+          <option value="1ª Classe">1ª Classe</option>
+          <option value="2ª Classe">2ª Classe</option>
+          <option value="3ª Classe">3ª Classe</option>
+          <option value="4ª Classe">4ª Classe</option>
+          <option value="5ª Classe">5ª Classe</option>
+          <option value="6ª Classe">6ª Classe</option>
+          <option value="7ª Classe">7ª Classe</option>
+          <option value="8ª Classe">8ª Classe</option>
+          <option value="9ª Classe">9ª Classe</option>
+        </select>
+      </div>
+
+      <div class="form_control label_pointer">
+        <label for="enrol">Matrícula </label>
+        <input type="radio" name="enrol" id="enrol" value="Matrícula">
+        <label for="confirmation"> Confirmação</label>
+        <input type="radio" name="enrol" id="confirmation" value="Confirmação">
+      </div>
+
+      <div class="form_control">
+        <label for="observation">Observações adicionais</label><br>
+        <textarea name="observation" id="observation" cols="30" rows="10"></textarea>
+      </div>
+
+      <div class="form_control">
+        <label for="secretary">Nome da Secretária</label><br>
+        <input type="text" name="secretary" id="secretary">
+      </div>
+
+      <div class="button_student">
+        <button type="submit" class="btn_success">Adicionar</button>
+        <button type="reset" class="btn_danger">Limpar</button>
+        <button type="button" class="btn_primary" id="back-btn">Voltar</button>
+      </div>
+
+    </form>
+  </div>
+  <!--END ADD MAIN STUDENT CLASS-->
+  <!--VIEW LIST CLASS-->
+  <div class="view_list d_none" id="view_list">
+    <div class="form_control">
+      <select name="class" id="class">
+        <option value="">------------------------------------------Seleccione a
+          classe------------------------------------------</option>
+        <option value="Iniciação">Iniciação</option>
+        <option value="1ª Classe">1ª Classe</option>
+        <option value="2ª Classe">2ª Classe</option>
+        <option value="3ª Classe">3ª Classe</option>
+        <option value="4ª Classe">4ª Classe</option>
+        <option value="5ª Classe">5ª Classe</option>
+        <option value="6ª Classe">6ª Classe</option>
+        <option value="7ª Classe">7ª Classe</option>
+        <option value="8ª Classe">8ª Classe</option>
+        <option value="9ª Classe">9ª Classe</option>
+      </select>
+    </div>
+    <span class="display_list">
+      <table>
+
+      </table><br><br>
+    </span>
+    <div class="button_student">
+      <button type="button" class="btn_primary" id="back-btn-view">Voltar</button>
+    </div>
+  </div>
+  <!--END VIEW LIST CLASS-->
+  <!--STUDENTS CHARTS CLASS-->
+  <div class="display_students_charts d_none" id="display_students_charts">
+    <div class="list_classes_charts">
+      <div class="class_chart">
+        <span id="start"></span>
+        <br><small>Iniciação</small>
+      </div>
+      <div class="class_chart">
+        <span id="firstGrade"></span>
+        <br><small>1ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="secondGrade"></span>
+        <br><small>2ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="thirdGrade"></span>
+        <br><small>3ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="fourthGrade"></span>
+        <br><small>4ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="fifthGrade"></span>
+        <br><small>5ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="sixthGrade"></span>
+        <br><small>6ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="seventhGrade"></span>
+        <br><small>7ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="eigthGrade"></span>
+        <br><small>8ª Classe</small>
+      </div>
+      <div class="class_chart">
+        <span id="ninethGrade"></span>
+        <br><small>9ª Classe</small>
+      </div>
+
+    </div>
+    <div class="button_student">
+      <button type="button" class="btn_primary" id="back-btn-chart">Voltar</button>
+    </div>
+  </div>
+  <!--END STUDENTS CHARTS CLASS-->
+
+</div>

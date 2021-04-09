@@ -1,0 +1,63 @@
+<!--MAIN-->
+<div class="main">
+  {{#if err}}
+  <div class="warning_content" id="warning_message">{{err}}</div>
+  {{/if}}
+  {{#if success}}
+  <div class="success_content" id="success_content">{{success}}</div>
+  {{/if}}
+
+
+  <!--MAIN FINANCES-->
+  <div class="main_finance" id="main_finance">
+    <div class="card_finances" id="add_finance">
+      <h1><i class="fa fa-wpexplorer"></i></h1>
+    </div>
+    <div class="view_finances_list card_finances" id="view_finance_list">
+      <h1><i class="fa fa-folder-open"></i></h1>
+    </div>
+  </div>
+  <!--END MAIN FINANCES-->
+
+  <!--MAIN ADD FINANCES-->
+  <div class="main_add_finance d_none" id="main_add_finance">
+    <form method="post" action="/docs" id="form_finances" enctype="multipart/form-data">
+
+      <div class="form_control">
+        <label for="name">Nome do Documento</label><br>
+        <input type="text" name="name" id="name">
+      </div>
+
+      <div class="form_control">
+        <label for="description">Descrição</label><br>
+        <input type="text" name="description" id="description">
+      </div>
+
+      <div class="form_control"><br>
+        <input type="file" name="doc" id="doc" accept=".pdf, .doc, xlsx, .pub, .pptx, .docx, .accdb">
+      </div>
+
+      <div class="button_finance">
+        <button type="submit" class="btn_success">Adicionar</button>
+        <button type="reset" class="btn_danger">Limpar</button>
+        <button type="button" class="btn_primary" id="back-btn">Voltar</button>
+      </div>
+
+    </form>
+  </div>
+  <!--END ADD MAIN FINANCES-->
+  <!--VIEW LIST FINANCES-->
+  <div class="view_list d_none" id="view_list">
+    <span class="display_list">
+      <table id="table_finances">
+
+      </table><br><br>
+      <span id="no_finance"></span>
+    </span>
+    <div class="button_finance">
+      <button type="button" class="btn_primary" id="back-btn-view">Voltar</button>
+    </div>
+  </div>
+  <!--END VIEW LIST CLASS-->
+
+</div>

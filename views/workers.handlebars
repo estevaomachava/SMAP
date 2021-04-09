@@ -1,0 +1,86 @@
+<!--MAIN-->
+<div class="main">
+  {{#if err}}
+  <div class="warning_content" id="warning_message">{{err}}</div>
+  {{/if}}
+  {{#if success}}
+  <div class="success_content" id="success_content">{{success}}</div>
+  {{/if}}
+
+
+  <!--MAIN WORKERS-->
+  <div class="main_worker" id="main_worker">
+    <div class="card_workers" id="add_worker">
+      <h1><i class="fa fa-sticky-note"></i></h1>
+    </div>
+    <div class="view_workers_list card_workers" id="view_worker_list">
+      <h1><i class="fa fa-thumb-tack"></i></h1>
+    </div>
+  </div>
+  <!--END MAIN WORKER-->
+
+  <!--MAIN ADD WORKER-->
+  <div class="main_add_worker d_none" id="main_add_worker">
+    <form method="post" action="/workers" id="form_workers">
+
+      <div class="form_control">
+        <label for="name">Nome</label><br>
+        <input type="text" name="name" id="name">
+      </div>
+
+      <div class="form_control">
+        <label for="area">Área de Atuação</label><br>
+        <select name="area" id="area">
+          <option value="">------------------------------------------Seleccione a área de atuação------------------------------------------</option>
+          <option value="Pedagógica">Pedagógica</option>
+          <option value="Administrativa">Administrativa</option>
+          <option value="Secretaria">Secretaria</option>
+          <option value="Ulteriores">Ulteriores</option>
+        </select>
+      </div>
+
+      <div class="form_control">
+        <label for="shift">Turno</label><br>
+        <select name="shift" id="shift">
+          <option value="">------------------------------------------Seleccione o turno------------------------------------------</option>
+          <option value="Manhã">Manhã</option>
+          <option value="Tarde">Tarde</option>
+          <option value="Noite">Noite</option>
+          <option value="Todo dia">Todo dia</option>
+        </select>
+      </div>
+
+      <div class="form_control">
+        <label for="responsability">Responsabilidade</label><br>
+        <input type="text" name="responsability" id="responsability">
+      </div>
+
+      <div class="form_control">
+        <label for="observations">Observações</label><br>
+        <textarea name="observations" id="observations" cols="30" rows="10"></textarea>
+      </div>
+
+      <div class="button_worker">
+        <button type="submit" class="btn_success">Adicionar</button>
+        <button type="reset" class="btn_danger">Limpar</button>
+        <button type="button" class="btn_primary" id="back-btn">Voltar</button>
+      </div>
+
+    </form>
+  </div>
+  <!--END ADD MAIN WORKER-->
+  <!--VIEW LIST WORKER-->
+  <div class="view_list d_none" id="view_list">
+    <span class="display_list">
+      <table id="table_workers">
+
+      </table><br><br>
+      <span id="no_worker"></span>
+    </span>
+    <div class="button_worker">
+      <button type="button" class="btn_primary" id="back-btn-view">Voltar</button>
+    </div>
+  </div>
+  <!--END VIEW LIST CLASS-->
+
+</div>

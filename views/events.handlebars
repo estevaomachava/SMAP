@@ -1,0 +1,91 @@
+<!--MAIN-->
+<div class="main">
+  {{#if err}}
+  <div class="warning_content" id="warning_message">{{err}}</div>
+  {{/if}}
+  {{#if success}}
+  <div class="success_content" id="success_content">{{success}}</div>
+  {{/if}}
+
+
+  <!--MAIN EVENT-->
+  <div class="main_event" id="main_event">
+    <div class="card_events" id="add_event">
+      <h1><i class="fa fa-chain-broken"></i></h1>
+    </div>
+    <div class="view_events_list card_events" id="view_event_list">
+      <h1><i class="fa fa-delicious"></i></h1>
+    </div>
+  </div>
+  <!--END MAIN EVENT-->
+
+  <!--MAIN ADD EVENT-->
+  <div class="main_add_event d_none" id="main_add_event">
+    <form method="post" action="/events" id="form_events">
+
+      <div class="form_control">
+        <label for="name">Nome</label><br>
+        <input type="text" name="name" id="name">
+      </div>
+
+      <div class="form_control">
+        <label for="day">Data</label><br>
+        <div class="d_flex event_date">
+          <input type="number" name="day" min="1" max="31" maxlength="2">
+          <select name="month" id="month">
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="5">Maio</option>
+            <option value="6">Junho</option>
+            <option value="7">Julho</option>
+            <option value="8">Agosto</option>
+            <option value="9">Setembro</option>
+            <option value="10">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+          </select>
+          <input type="number" name="year" maxlength="4">
+        </div>
+      </div>
+
+      <div class="form_control">
+        <label for="description">Descrição</label><br>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+      </div>
+
+      <div class="form_control">
+        <label for="reasons">Objectivos</label><br>
+        <input type="text" name="reasons" id="reasons">
+      </div>
+
+      <div class="form_control">
+        <label for="partakers">Intevenientes</label><br>
+        <input type="text" name="partakers" id="partakers">
+      </div>
+
+      <div class="button_event">
+        <button type="submit" class="btn_success">Adicionar</button>
+        <button type="reset" class="btn_danger">Limpar</button>
+        <button type="button" class="btn_primary" id="back-btn">Voltar</button>
+      </div>
+
+    </form>
+  </div>
+  <!--END ADD MAIN EVENT-->
+  <!--VIEW LIST EVENT-->
+  <div class="view_list d_none" id="view_list">
+    <span class="display_list">
+      <table id="table_events">
+
+      </table><br><br>
+      <span id="no_event"></span>
+    </span>
+    <div class="button_event">
+      <button type="button" class="btn_primary" id="back-btn-view">Voltar</button>
+    </div>
+  </div>
+  <!--END VIEW LIST CLASS-->
+
+</div>

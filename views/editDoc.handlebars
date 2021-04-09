@@ -1,0 +1,27 @@
+<!--Editing student-->
+{{#each doc}}
+
+<div class="main_update_finances">
+  <form method="post" action="/updateDocs">
+
+    <div class="form_control">
+        <label for="name">Nome</label><br>
+        <input type="text" name="name" id="name" value="{{name}}">
+        <input type="hidden" name="id" value="{{_id}}">
+      </div>
+
+      <div class="form_control">
+        <label for="description">Descrição</label><br>
+        <input type="text" name="description" id="description" value="{{description}}">
+      </div>
+
+    <div class="button_worker">
+      <button type="submit" class="btn_success">Atualizar</button>
+      <a href="/documents" class="btn_primary">Voltar</a>
+    </div>
+
+  </form>
+</div>
+
+{{/each}}
+<!--End of Editing student-->

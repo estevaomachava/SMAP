@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="container_form">
+    {{#if error}}
+    <div class="warning_content d_none" id="warning_content">{{error}}</div>
+    {{/if}}
+    <form method="post" id="form" action="/">
+      <div class="content_form">
+        <h2>SMAP <i class="fa fa-mortar-board"></i></h2>
+        <p>School Management Application Programme</p><br>
+      </div>
+      <span id="msg"></span>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+      <label for="password">Senha</label>
+      <input type="password" name="password" id="password">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>

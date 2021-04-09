@@ -1,0 +1,37 @@
+<!--Editing student-->
+{{#each finance}}
+
+<div class="main_update_finances">
+  <form method="post" action="/updateFinance">
+
+    <div class="form_control">
+        <label for="name">Nome</label><br>
+        <input type="text" name="name" id="name" value="{{name}}">
+        <input type="hidden" name="id" value="{{_id}}">
+      </div>
+
+      <div class="form_control">
+        <label for="wage">Salário</label><br>
+        <input type="number" name="wage" id="wage" value="{{wage}}">
+      </div>
+
+      <div class="form_control">
+        <label for="assistance">Subsídio Adicional</label><br>
+        <input type="number" name="assistance" id="assistance" value="{{assistance}}">
+      </div>
+
+      <div class="form_control">
+        <label for="discounts">Descontos</label><br>
+        <input type="number" name="discounts" id="discounts" value="{{discounts}}">
+      </div>
+
+    <div class="button_worker">
+      <button type="submit" class="btn_success">Atualizar</button>
+      <a href="/finances" class="btn_primary">Voltar</a>
+    </div>
+
+  </form>
+</div>
+
+{{/each}}
+<!--End of Editing student-->

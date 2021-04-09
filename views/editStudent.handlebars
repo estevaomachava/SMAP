@@ -1,0 +1,134 @@
+<!--Editing student-->
+{{#each student}}
+
+<div class="main_update_students">
+  <form method="post" action="/updateStudent">
+
+    <div class="form_control">
+      <label for="name">Nome Completo</label><br>
+      <input type="text" name="name" id="name" value="{{name}}">
+      <input type="hidden" name="id" value="{{_id}}">
+    </div>
+
+    <div class="form_control">
+      <label for="father">Filho de</label><br>
+      <input type="text" name="father" id="father" value="{{father}}">
+    </div>
+
+    <div class="form_control">
+      <label for="mother">E de</label><br>
+      <input type="text" name="mother" id="mother" value="{{mother}}">
+    </div>
+
+    <div class="form_control">
+      <label for="day">Data de Nascimento</label><br>
+      <div class="d_flex event_date">
+        <input type="number" name="day" min="1" max="31" maxlength="2" value="{{day}}">
+        <select name="month" id="month">
+          <option value="1">Janeiro</option>
+          <option value="2">Fevereiro</option>
+          <option value="3">Março</option>
+          <option value="4">Abril</option>
+          <option value="5">Maio</option>
+          <option value="6">Junho</option>
+          <option value="7">Julho</option>
+          <option value="8">Agosto</option>
+          <option value="9">Setembro</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
+          <option value="12">Dezembro</option>
+        </select>
+        <input type="number" name="year" maxlength="4" value="{{year}}">
+      </div>
+    </div>
+
+    <div class="form_control">
+      <label for="bi">Bilhete nº</label><br>
+      <span id="bi_msg"></span>
+      <input type="text" name="bi" id="bi" value="{{bi}}">
+    </div>
+
+    <div class="form_control">
+      <label for="city">Cidade</label><br>
+      <input type="text" name="city" id="city" value="{{city}}">
+    </div>
+
+    <div class="form_control">
+      <label for="neighbor">Bairro</label><br>
+      <input type="text" name="neighbor" id="neighbor" value="{{neighbor}}">
+    </div>
+
+    <div class="form_control">
+      <label for="background">Proveniência</label><br>
+      <select name="background" id="background">
+        <option value="">------------------------------------------Seleccione a proveniência
+          escolar------------------------------------------</option>
+        <option value="Nenhuma">Nenhuma</option>
+        <option value="Transferido">Transferido</option>
+      </select>
+    </div>
+
+    <div class="form_control">
+      <label for="gender">Gênero</label><br>
+      <select name="gender" id="gender">
+        <option value="">------------------------------------------Seleccione o
+          gênero------------------------------------------</option>
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+      </select>
+    </div>
+
+    <div class="form_control">
+      <label for="civil">Estado Civil</label><br>
+      <select name="civil" id="civil">
+        <option value="">------------------------------------------Seleccione o estado
+          civil------------------------------------------</option>
+        <option value="Solteiro">Solteiro</option>
+        <option value="Casado">Casado</option>
+      </select>
+    </div>
+
+    <div class="form_control">
+      <select name="classe" id="classe">
+        <option value="">------------------------------------------Seleccione a
+          classe------------------------------------------</option>
+        <option value="Iniciação">Iniciação</option>
+        <option value="1ª Classe">1ª Classe</option>
+        <option value="2ª Classe">2ª Classe</option>
+        <option value="3ª Classe">3ª Classe</option>
+        <option value="4ª Classe">4ª Classe</option>
+        <option value="5ª Classe">5ª Classe</option>
+        <option value="6ª Classe">6ª Classe</option>
+        <option value="7ª Classe">7ª Classe</option>
+        <option value="8ª Classe">8ª Classe</option>
+        <option value="9ª Classe">9ª Classe</option>
+      </select>
+    </div>
+
+    <div class="form_control label_pointer">
+      <label for="enrol">Matrícula </label>
+      <input type="radio" name="enrol" id="enrol" value="Matrícula">
+      <label for="confirmation"> Confirmação</label>
+      <input type="radio" name="enrol" id="confirmation" value="Confirmação">
+    </div>
+
+    <div class="form_control">
+      <label for="observation">Observações adicionais</label><br>
+      <textarea name="observation" id="observation" cols="30" rows="10">{{observation}}</textarea>
+    </div>
+
+    <div class="form_control">
+      <label for="secretary">Nome da Secretária</label><br>
+      <input type="text" name="secretary" id="secretary" value="{{secretary}}">
+    </div>
+
+    <div class="button_student">
+      <button type="submit" class="btn_success">Atualizar</button>
+      <a href="/students" class="btn_primary">Voltar</a>
+    </div>
+
+  </form>
+</div>
+
+{{/each}}
+<!--End of Editing student-->
